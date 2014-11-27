@@ -1,0 +1,2 @@
+To compile this project only execute:
+    $ make && ./main
