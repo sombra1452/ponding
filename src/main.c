@@ -47,28 +47,15 @@ int main(int argc, char *argv[]) {
     attron(COLOR_PAIR(1));
 */
 
-    // mvprintw(axe_y,axe_x, "%c", letter);
     while(1) {
 
         getmaxyx(stdscr, axe_max_y, axe_max_x);
 
         clear();
-        mvprintw(0,0, "My: %d - y: %d - Mx: %d - x: %d", axe_max_y, axe_y, axe_max_x, axe_x);    
+        mvprintw(0,0, "My: %d - y: %d - Mx: %d - x: %d", 
+                    axe_max_y, axe_y, axe_max_x, axe_x);    
         mvprintw(axe_y, axe_x, "%c",letter);
-/*
-        if (axe_x < 0) {
-            axe_x = 0;
-        } 
-        else if (axe_x > axe_max_x) {
-            axe_x = axe_max_x-1;
-        } 
-        else if (axe_y < 1) {
-            axe_y = 1;
-        } 
-        else if (axe_y > axe_max_y){
-            axe_y = axe_max_y-1;
-        }
-*/
+
         refresh();
 
         int char_number;
@@ -98,10 +85,7 @@ int main(int argc, char *argv[]) {
             default:
                 break;
         }   
-
-
-        // refresh();
-        
+       
         usleep(DELAY);
       
         // NON OUT OF WINDOW
@@ -123,26 +107,7 @@ int main(int argc, char *argv[]) {
         
         mvprintw(axe_y,axe_x, "%c", letter);
         refresh();
-
-
-
-        // next_x = axe_x + direction;
-/*
-        if (axe_x > (axe_max_x/2)){
-           letter = 'P';
-        } else if( axe_x < (axe_max_x/2)){
-           letter = 'O';
-        }
-
-        if (next_x >= axe_max_x || next_x < 0) {
-            direction *= -1;
-        } else {
-            axe_x += direction;
-        }
-        
-        refresh();
-*/
-        
+       
 
     }
 
